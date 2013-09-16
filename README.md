@@ -2,6 +2,8 @@
 
 node.js through stream that emits a unique stream of objects based on criteria
 
+[![build status](https://secure.travis-ci.org/eugeneware/unique-stream.png)](http://travis-ci.org/eugeneware/unique-stream)
+
 ## Installation
 
 Install via npm:

@@ -89,4 +89,20 @@ describe('unique stream', function() {
         done();
       });
   });
+
+  it('should be able to handle uniqueness when not piped', function(done) {
+    var stream = unique();
+    var count = 0;
+    stream.on('data', function (data) {
+      expect(data).to.equal('hello');
+      count++;
+    });
+    stream.on('end', function() {
+      expect(count).to.equal(1);
+      done();
+    });
+    stream.write('hello');
+    stream.write('hello');
+    stream.end();
+  });
 });

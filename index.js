@@ -32,7 +32,7 @@ function unique(propName) {
   s.end = function (data) {
     if (arguments.length) s.write(data);
     ended++;
-    if (ended == pipes) {
+    if (ended === pipes || pipes === 0) {
       s.writable = false;
       s.emit('end');
     }
