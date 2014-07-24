@@ -1,4 +1,5 @@
 var Stream = require('stream');
+var wait = require('wait');
 
 function prop(propName) {
   return function (data) {
@@ -7,7 +8,7 @@ function prop(propName) {
 }
 
 module.exports = unique;
-function unique(propName) {
+function unique(propName, clear_ms) {
   var keyfn = JSON.stringify;
   if (typeof propName === 'string') {
     keyfn = prop(propName);
@@ -15,6 +16,10 @@ function unique(propName) {
     keyfn = propName;
   }
   var seen = {};
+  wait.repeat(clear_ms, function() {
+      seen = {};
+  });
+
   var s = new Stream();
   s.readable = true;
   s.writable = true;

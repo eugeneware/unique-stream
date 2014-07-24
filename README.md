@@ -87,3 +87,11 @@ makeStreamOfObjects()
 
 aggregator.on('data', console.log);
 ```
+
+### Dedupe timeout:
+``` js
+// Allow duplicates every 100ms
+makeStreamOfObjects()
+  .pipe(unique(undefined, 100)))og78
+  .on('data', console.log);
+```
