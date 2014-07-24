@@ -92,6 +92,6 @@ aggregator.on('data', console.log);
 ``` js
 // Allow duplicates every 100ms
 makeStreamOfObjects()
-  .pipe(unique(undefined, 100)))og78
+  .pipe(unique(undefined, 100)))
   .on('data', console.log);
 ```
