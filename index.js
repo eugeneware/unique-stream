@@ -16,9 +16,12 @@ function unique(propName, clear_ms) {
     keyfn = propName;
   }
   var seen = {};
-  wait.repeat(clear_ms, function() {
-      seen = {};
-  });
+  if (clear_ms) {
+      wait.repeat(clear_ms, function() {
+          seen = {};
+      });
+  }
+
 
   var s = new Stream();
   s.readable = true;
