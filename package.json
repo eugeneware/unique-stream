@@ -25,6 +25,7 @@
     "after": "~0.8.1"
   },
   "dependencies": {
+    "es6-set": "^0.1.1",
     "through2-filter": "^1.4.0"
   }
 }
