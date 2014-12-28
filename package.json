@@ -23,5 +23,8 @@
     "chai": "~1.7.2",
     "mocha": "^1.18.2",
     "after": "~0.8.1"
+  },
+  "dependencies": {
+    "through2-filter": "^1.4.0"
   }
 }
