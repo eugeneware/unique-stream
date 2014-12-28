@@ -87,3 +87,29 @@ makeStreamOfObjects()
 
 aggregator.on('data', console.log);
 ```
+
+## Use a custom store to record keys that have been encountered
+
+By default a set is used to store keys encountered so far, in order to check new ones for
+uniqueness. You can supply your own store instead, providing it supports the add(key) and 
+has(key) methods. This could allow you to use a persistant store so that already encountered
+objects are not re-streamed when node is reloaded.
+
+``` js
+var keyStore = {
+  store: {},
+
+  add: function(key) {
+    this.store[key] = true;
+  },
+
+  has: function(key) {
+    return this.store[key] !== undefined;
+  }
+};
+    
+makeStreamOfObjects()
+  .pipe(unique('name', keyStore))
+  .on('data', console.log);
+```
+

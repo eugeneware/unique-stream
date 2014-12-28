@@ -21,10 +21,10 @@ function unique(propName, keyStore) {
   return filter(function (data) {
     var key = keyfn(data);
 
-    if (set.has(key)) {
+    if (keyStore.has(key)) {
       return false
     } else {
-      set.add(key);
+      keyStore.add(key);
       return true
     }
   });
