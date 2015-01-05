@@ -113,3 +113,19 @@ makeStreamOfObjects()
   .on('data', console.log);
 ```
 
+## Contributing
+
+unique-stream is an **OPEN Open Source Project**. This means that:
+
+> Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
+
+See the [CONTRIBUTING.md](https://github.com/eugeneware/unique-stream/blob/master/CONTRIBUTING.md) file for more details.
+
+### Contributors
+
+unique-stream is only possible due to the excellent work of the following contributors:
+
+<table><tbody>
+<tr><th align="left">Eugene Ware</th><td><a href="https://github.com/eugeneware">GitHub/eugeneware</a></td></tr>
+<tr><th align="left">Craig Ambrose</th><td><a href="https://github.com/craigambrose">GitHub/craigambrose</a></td></tr>
+</tbody></table>
