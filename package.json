@@ -20,9 +20,9 @@
   "author": "Eugene Ware <eugene@noblesamurai.com>",
   "license": "BSD",
   "devDependencies": {
-    "chai": "~1.7.2",
-    "mocha": "^1.18.2",
-    "after": "~0.8.1"
+    "after": "~0.8.1",
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
   },
   "dependencies": {
     "es6-set": "^0.1.1",
