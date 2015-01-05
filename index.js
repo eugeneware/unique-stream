@@ -1,4 +1,5 @@
-var Stream = require('stream');
+var filter = require('through2-filter').obj;
+var Set = require('es6-set');
 
 function prop(propName) {
   return function (data) {
@@ -7,48 +8,24 @@ function prop(propName) {
 }
 
 module.exports = unique;
-function unique(propName) {
+function unique(propName, keyStore) {
+  keyStore = keyStore || new Set();
+
   var keyfn = JSON.stringify;
   if (typeof propName === 'string') {
     keyfn = prop(propName);
   } else if (typeof propName === 'function') {
     keyfn = propName;
   }
-  var seen = {};
-  var s = new Stream();
-  s.readable = true;
-  s.writable = true;
-  var pipes = 0;
 
-  s.write = function (data) {
+  return filter(function (data) {
     var key = keyfn(data);
-    if (seen[key] === undefined) {
-      seen[key] = true;
-      s.emit('data', data);
+
+    if (keyStore.has(key)) {
+      return false;
+    } else {
+      keyStore.add(key);
+      return true;
     }
-  };
-
-  var ended = 0;
-  s.end = function (data) {
-    if (arguments.length) s.write(data);
-    ended++;
-    if (ended === pipes || pipes === 0) {
-      s.writable = false;
-      s.emit('end');
-    }
-  };
-
-  s.destroy = function (data) {
-    s.writable = false;
-  };
-
-  s.on('pipe', function () {
-    pipes++;
   });
-
-  s.on('unpipe', function () {
-    pipes--;
-  });
-
-  return s;
 }

@@ -106,4 +106,34 @@ describe('unique stream', function() {
     stream.write('hello');
     stream.end();
   });
+
+  it('can use a custom keystore', function(done) {
+    var keyStore = {
+      store: {},
+
+      add: function(key) {
+        this.store[key] = true;
+      },
+
+      has: function(key) {
+        return this.store[key] !== undefined;
+      }
+    };
+
+    var aggregator = unique('number', keyStore);
+    makeStream('a')
+      .pipe(aggregator);
+    makeStream('b')
+      .pipe(aggregator);
+
+    var n = 0;
+    aggregator
+      .on('data', function () {
+        n++;
+      })
+      .on('end', function () {
+        expect(n).to.equal(10);
+        done();
+      });
+  })
 });
