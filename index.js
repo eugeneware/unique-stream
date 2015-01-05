@@ -1,4 +1,4 @@
-var filter = require("through2-filter").obj;
+var filter = require('through2-filter').obj;
 var Set = require('es6-set');
 
 function prop(propName) {
