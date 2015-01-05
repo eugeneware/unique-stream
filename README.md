@@ -28,7 +28,7 @@ function makeStreamOfObjects() {
   for (var i = 0; i < 3; i++) {
     setImmediate(function () {
       s.emit('data', { name: 'Bob', number: 123 });
-      --count && end();
+      --count || end();
     });
   }
 
