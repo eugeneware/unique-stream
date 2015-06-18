@@ -1,6 +1,6 @@
 {
   "name": "unique-stream",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "node.js through stream that emits a unique stream of objects based on criteria",
   "main": "index.js",
   "scripts": {
