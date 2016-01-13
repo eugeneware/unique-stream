@@ -11,18 +11,28 @@ describe('unique stream', function() {
     s.readable = true;
 
     var n = 10;
-    var next = after(n, function () {
+    var next = after(n * 2, function () {
       setImmediate(function () {
         s.emit('end');
       });
     });
 
-    for (var i = 0; i < n; i++) {
-      var o = {
-        type: type,
-        name: 'name ' + i,
-        number: i * 10
-      };
+    for (var k = 0; k < n * 2; k++) {
+      var i = Math.floor(k / 2);
+      var o;
+      if (k % 2 === 0) {
+        o = {
+          type: type,
+          name: 'name ' + i,
+          number: i * 10,
+        };
+      } else {
+        o = {
+          number: i * 10,
+          name: 'name ' + i,
+          type: type,
+        };
+      }
 
       (function (o) {
         setImmediate(function () {
