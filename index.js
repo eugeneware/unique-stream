@@ -1,6 +1,7 @@
 'use strict';
 
 var filter = require('through2-filter').obj;
+var stringify = require("json-stable-stringify");
 var ES6Set;
 if (typeof global.Set === 'function') {
   ES6Set = global.Set;
@@ -26,7 +27,7 @@ module.exports = unique;
 function unique(propName, keyStore) {
   keyStore = keyStore || new ES6Set();
 
-  var keyfn = JSON.stringify;
+  var keyfn = stringify;
   if (typeof propName === 'string') {
     keyfn = prop(propName);
   } else if (typeof propName === 'function') {
