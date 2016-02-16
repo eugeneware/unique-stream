@@ -27,7 +27,7 @@
   "devDependencies": {
     "after": "~0.8.1",
     "chai": "^3.0.0",
-    "istanbul": "^0.3.17",
+    "istanbul": "^0.4.2",
     "istanbul-coveralls": "^1.0.3",
     "mocha": "^2.1.0"
   }
