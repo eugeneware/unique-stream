@@ -93,7 +93,7 @@ aggregator.on('data', console.log);
 
 By default a set is used to store keys encountered so far, in order to check new ones for
 uniqueness. You can supply your own store instead, providing it supports the add(key) and 
-has(key) methods. This could allow you to use a persistant store so that already encountered
+has(key) methods. This could allow you to use a persistent store so that already encountered
 objects are not re-streamed when node is reloaded.
 
 ``` js
