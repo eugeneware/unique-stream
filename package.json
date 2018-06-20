@@ -20,6 +20,9 @@
     "streaming",
     "streams"
   ],
+  "engines": {
+    "node": ">= 0.10"
+  },
   "dependencies": {
     "json-stable-stringify": "^1.0.0",
     "through2-filter": "^2.0.0"
