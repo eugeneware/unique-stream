@@ -21,7 +21,7 @@
     "streams"
   ],
   "dependencies": {
-    "json-stable-stringify": "^1.0.0",
+    "json-stable-stringify-without-jsonify": "^1.0.1",
     "through2-filter": "^2.0.0"
   },
   "devDependencies": {
