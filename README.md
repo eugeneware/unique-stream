@@ -130,5 +130,5 @@ unique-stream is only possible due to the excellent work of the following contri
 <tr><th align="left">Eugene Ware</th><td><a href="https://github.com/eugeneware">GitHub/eugeneware</a></td></tr>
 <tr><th align="left">Craig Ambrose</th><td><a href="https://github.com/craigambrose">GitHub/craigambrose</a></td></tr>
 <tr><th align="left">Shinnosuke Watanabe</th><td><a href="https://github.com/shinnn">GitHub/shinnn</a></td></tr>
-<tr><th align="left">Honza Javorek</th><td><a href="https://github.com/honzajavorek">GitHub/honzajavorek</a></td></tr>
+<tr><th align="left">Rouven Weßling</th><td><a href="https://github.com/realityking">GitHub/realityking</a></td></tr>
 </tbody></table>
