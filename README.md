@@ -3,7 +3,6 @@
 node.js through stream that emits a unique stream of objects based on criteria
 
 [![Build Status](https://github.com/eugeneware/unique-stream/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/eugeneware/unique-stream/actions/workflows/ci.yml)
-[![Coverage Status](https://coveralls.io/repos/eugeneware/unique-stream/badge.svg?branch=master&service=github)](https://coveralls.io/github/eugeneware/unique-stream?branch=master)
 
 ## Installation
 
