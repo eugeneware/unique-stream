@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "json-stable-stringify-without-jsonify": "^1.0.1",
-    "through2-filter": "^3.0.0"
+    "through2-filter": "3.0.0"
   },
   "devDependencies": {
     "after": "~0.8.1",
