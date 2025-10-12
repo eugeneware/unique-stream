@@ -6,7 +6,8 @@
   "author": "Eugene Ware <eugene@noblesamurai.com>",
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "LICENSE"
   ],
   "scripts": {
     "test": "mocha",
