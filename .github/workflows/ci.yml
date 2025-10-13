@@ -14,7 +14,6 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 4.x
           - 6.x
           - 8.x
           - 10.x
