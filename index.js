@@ -1,22 +1,7 @@
 'use strict';
 
-var filter = require('through2-filter').obj;
-var stringify = require("json-stable-stringify-without-jsonify");
-
-var ES6Set;
-if (typeof global.Set === 'function') {
-  ES6Set = global.Set;
-} else {
-  ES6Set = function() {
-    this.keys = [];
-    this.has = function(val) {
-      return this.keys.indexOf(val) !== -1;
-    },
-    this.add = function(val) {
-      this.keys.push(val);
-    }
-  }
-}
+const filter = require('through2-filter').obj;
+const stringify = require("json-stable-stringify-without-jsonify");
 
 function prop(propName) {
   return function (data) {
@@ -26,9 +11,9 @@ function prop(propName) {
 
 module.exports = unique;
 function unique(propName, keyStore) {
-  keyStore = keyStore || new ES6Set();
+  keyStore = keyStore || new Set();
 
-  var keyfn = stringify;
+  let keyfn = stringify;
   if (typeof propName === 'string') {
     keyfn = prop(propName);
   } else if (typeof propName === 'function') {
@@ -36,7 +21,7 @@ function unique(propName, keyStore) {
   }
 
   return filter(function (data) {
-    var key = keyfn(data);
+    const key = keyfn(data);
 
     if (keyStore.has(key)) {
       return false;
