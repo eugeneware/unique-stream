@@ -2,7 +2,10 @@
   "name": "unique-stream",
   "version": "2.4.0",
   "description": "node.js through stream that emits a unique stream of objects based on criteria",
-  "repository": "eugeneware/unique-stream",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugeneware/unique-stream.git"
+  },
   "author": "Eugene Ware <eugene@noblesamurai.com>",
   "license": "MIT",
   "files": [
