@@ -8,6 +8,9 @@
   },
   "author": "Eugene Ware <eugene@noblesamurai.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">= 6.9"
+  },
   "files": [
     "index.js",
     "LICENSE"
